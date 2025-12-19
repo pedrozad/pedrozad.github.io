@@ -1,186 +1,330 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Diego Pedroza</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Improving active micromobility</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<!-- Compiled and minified CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        :root {
+            --color-primary: #2E8B9E;
+            --color-secondary: #E84E4E;
+            --color-accent: #7CB342;
+            --color-dark: #1a1a1a;
+            --color-light: #f5f5f5;
+            --color-text: #333333;
+        }
 
-<!-- <link rel="stylesheet" href="materialize/css/materialize.min.css"> -->
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--color-text);
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8f4f8 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
 
+        header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #1e5a68 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
 
-<!-- Compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<!-- <script src="materialize/js/materialize.min.js"></script> -->
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
 
-<!-- Materialize icons -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
 
-<!-- Google fonts Lato and Roboto Slab-->
-<link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Slab|Jura" rel="stylesheet">
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
 
-<style>
-    h1 {
-        font-family: 'Lato';
-        text-align: center;
-    }
-    h2 {
-        font-family: 'Lato';
-        font-size: 4rem;
-        text-align: center;
-    }
-    #subtitle{
-        font-family: 'Roboto Slab';
-        font-weight: 100;
-        font-size: 2rem;
-        line-height: 63px;   
-        text-align: center;
-        color:black;
-    }
-    #title{
-        color:black;
-    }
-    p {
-        font-family: 'Roboto Slab';
-    }
-    body {
-        background-color: #007EA7;
-    }
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-    .box{
-        background: #FFFFFF;
-        border: 1px solid #007EA7;
-        box-sizing: border-box;
-        border-radius: 49px;
-    }
-    
-    .profile-image{
-        background: radial-gradient(50% 50% at 50% 50%, #003459 0%, #007EA7 100%);
-        border: 1px solid #000000;
-        box-sizing: border-box;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 180px;
-        padding: 2%;
-        width: 367px;
-        height: 371px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 1rem;
-        
-    }
-    
-</style>
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #1e5a68 100%);
+            color: white;
+            padding: 20px;
+            border-bottom: 4px solid var(--color-secondary);
+        }
+
+        .project-header h2 {
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+
+        .project-body {
+            padding: 25px;
+        }
+
+        .field {
+            margin-bottom: 20px;
+        }
+
+        .field-label {
+            font-weight: 600;
+            color: var(--color-primary);
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .field-value {
+            color: var(--color-text);
+            font-size: 1em;
+            line-height: 1.5;
+            padding-left: 10px;
+            border-left: 3px solid var(--color-accent);
+        }
+
+        .field-value a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 500;
+            word-break: break-all;
+        }
+
+        .field-value a:hover {
+            text-decoration: underline;
+        }
+
+        .authors-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .author-badge {
+            background: var(--color-light);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            border-left: 3px solid var(--color-accent);
+        }
+
+        .qr-section {
+            background: #f9f9f9;
+            padding: 20px;
+            border-top: 2px solid var(--color-light);
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .qr-section p {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .doi-badge {
+            display: inline-block;
+            background: var(--color-secondary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 0.85em;
+            margin-top: 10px;
+        }
+
+        footer {
+            background: var(--color-dark);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 40px;
+            font-size: 0.9em;
+        }
+
+        .logo-section {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .logo-section p {
+            color: var(--color-primary);
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-header h2 {
+                font-size: 1.2em;
+            }
+
+            .authors-list {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>Improving active micromobility with AI and metaheuristics</h1>
+        <!-- <p>Proyectos de Investigación en Movilidad Sostenible</p> -->
+    </header>
 
+    <div class="container">
+        <div class="projects-grid">
+            <!-- Proyecto 1 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h2>Redesigning road infrastructure to integrate e-scooter micromobility as part of multimodal transportation</h2>
+                </div>
+                <div class="project-body">
+                    <div class="field">
+                        <div class="field-label">Title</div>
+                        <div class="field-value">
+                            Redesigning road infrastructure to integrate e-scooter micromobility as part of multimodal transportation
+                        </div>
+                    </div>
 
+                    <div class="field">
+                        <div class="field-label">DOI</div>
+                        <div class="field-value">
+                            <a href="https://doi.org/10.1145/3638529.3654142" target="_blank">10.1145/3638529.3654142</a>
+                            <!-- <a href="https://doi.org/10.1145/3638529.3654142" target="_blank"><span class="doi-badge">DOI</span></a> -->
+                        </div>
+                    </div>
 
-<!-- Materialize CSS Navbar -->
-<!-- <div row>
-    <div class="l12 s12 m12">
-        <nav class="nav-extended white">
-    
-            <div class="nav-wrapper">
-                <h1 class="center" id="title">Diego Pedroza</h1>
+                    <div class="field">
+                        <div class="field-label">Authors</div>
+                        <div class="authors-list">
+                            <span class="author-badge">Diego Daniel Pedroza-Perez</span>
+                            <span class="author-badge">Jamal Toutouh</span>
+                            <span class="author-badge">Gabriel Luque</span>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <div class="field-label">Abstract</div>
+                        <div class="field-value">
+                                Information & Contributors
+    Bibliometrics & Citations
+    View Options
+    References
+
+    Share
+
+This paper proposes a multi-criteria approach to optimize urban infrastructure for e-scooters mobility. The problem considers redesigning road infrastructure to integrate e-scooters into a city's multimodal transportation system. This research aims to improve cycle lane coverage and connectivity for e-scooters while minimizing installation costs. Two parallel multi-objective evolutionary algorithms are devised to solve this problem in a real-world instance based on Málaga. The results showed that the algorithms effectively explored the Pareto front, offering diverse trade-off solutions. Key solutions are analyzed to evaluate the trade-offs between travel time improvement, cycle lane connectivity, multimodality, and installation costs. Visualization of proposed infrastructure changes illustrates significant reductions in travel time.
+                        </div>
+                    </div>
+
+                    <!-- <div class="qr-section">
+                        <p>Article access</p>
+                        <span class="doi-badge">Scan for the article</span>
+                    </div> -->
+                </div>
             </div>
-            <div class="nav-content">
-                <h2 class="center" id="subtitle">Software Developer</h2>
+
+            <!-- Proyecto 2 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h2>Optimizing Urban Infrastructure for E-Scooter Mobility</h2>
+                </div>
+                <div class="project-body">
+                    <div class="field">
+                        <div class="field-label">Title</div>
+                        <div class="field-value">
+                            Optimizing Urban Infrastructure for E-Scooter Mobility
+                        </div>
+                    </div>
+                     <div class="field">
+                        <div class="field-label">DOI</div>
+                        <div class="field-value">
+                            <a href="https://doi.org/10.1007/978-3-031-56852-7_22" target="_blank">10.1007/978-3-031-56852-7_22</a>
+                            <!-- <span class="doi-badge">DOI</span> -->
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="field-label">Abstract</div>
+                        <div class="field-value">
+                            This paper addresses the optimization of urban infrastructure for e-scooter mobility through a multi-criteria approach. The proposed problem considers redesigning road infrastructure to integrate e-scooters into a city’s multimodal transportation system. The objectives involve improving cycle lane coverage for e-scooters while minimizing installation costs. A parallel multi-objective evolutionary algorithm is introduced to solve this problem, applied to a real-world instance based on Málaga city data. The results showcase the algorithm’s effectiveness in exploring the Pareto front, offering diverse trade-off solutions. Key solutions are analyzed, highlighting different zones with varying trade-offs between travel time improvement and installation costs. Visualization of proposed infrastructure changes illustrates significant reductions in travel time and enhanced multimodality. Computational efficiency analysis indicates successful parallelization, achieving substantial speedup and high efficiency with up to 32 processing elements.
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <div class="field-label">Authors</div>
+                        <div class="authors-list">
+                            <span class="author-badge">Diego Daniel Pedroza-Perez</span>
+                            <span class="author-badge">Jamal Toutouh</span>
+                            <span class="author-badge">Gabriel Luque</span>
+                        </div>
+                    </div>
+
+                    <!-- <div class="field">
+                        <div class="field-label">Objetivos</div>
+                        <div class="field-value">
+                            <ul style="margin-left: 15px; margin-top: 10px;">
+                                <li>Integrar patinetes eléctricos en infraestructura vial</li>
+                                <li>Optimizar sistemas de transporte multimodal</li>
+                                <li>Reducir emisiones urbanas</li>
+                                <li>Mejorar la calidad de vida en ciudades</li>
+                            </ul>
+                        </div>
+                    </div> -->
+                   
+                    <!-- <div class="qr-section">
+                        <p>Article access</p>
+                        <span class="doi-badge">Scan for the article</span>
+                    </div> -->
+                </div>
             </div>
-        </nav>
+        </div>
     </div>
 
-</div>
-
-
-<div class="row"> -->
-    <!--Profile Image only in mobile-->
-    <!-- <div class="hide-on-med-and-up">
-        <div class="profile-image z-depth-2">
-            <div>
-                <img class="responsive-img circle" src="img/Foto.png" alt="Imagen de perfil">
-            </div>
-        </div>
-     </div>
-  
-        <div class="col s10 l5 box">
- 
-                <h2>Skills</h1>
-
-            <p class="flow-text">
-                <i class="material-icons">check_circle</i></span>Team worker and problem solver
-                <br>
-                <i class="material-icons">check_circle</i></span>Web Development with <span style="font-weight: bold;">HTML5, CCS3,
-                    Javascript, PHP, Python</span> and with frameworks and libraries such as
-                        <span style="font-weight: bold;">Flask, Django, Web2Py, WordPress and CodeIgniter</span>
-                        , and <span style="font-weight: bold;">Materialize, and Bootstrap</span>.
-                <br>
-                <i class="material-icons">check_circle</i></span> Relational Database Management such as SQLite, PostGreSQL,MySQL.
-                <br>
-                <i class="material-icons">check_circle</i></span> <span style="font-weight: bold;">GIT</span> as version control.      
-            </p>
-        </div>
-       
- 
-        <div class="col offset-s2 s10 offset-l2 l5 box">
-            <h1>Awards</h1>
-            <p class="flow-text">
-                <i class="material-icons">check_circle</i></span>Winner of Hackathon Panama Hackea. 2018 <br>
-                <i class="material-icons">check_circle</i></span>Dean List. Fall 2018.
-            </p>
-        </div>
-</div>
-<div class="row"> -->
-    <!--Profile Image-->
-    <!-- <div class="col s12 offset-l5 l2">
-        <div class="profile-image z-depth-2">
-            <div>
-                <img class="responsive-img circle" src="img/Foto.png" alt="Imagen de perfil">
-            </div>
-        </div>
-     </div>
-</div>
-
-<div class="row">
-        
-        <div class="col s10 l5 box">
-            <h1>Formal Education</h1>
-            <p class="flow-text">
-                <i class="material-icons">check_circle</i></span>Universidad de Málaga.  Msc Software Engineering and Artificial Intelligence. Sep 2020 - (Oct 2021)<br>
-                <i class="material-icons">check_circle</i></span>Universidad Interamericana de Panamá.  Postgraduate specialization in System Management. Sep 2020 - Nov 2021<br>
-                <i class="material-icons">check_circle</i></span>Universidad Interamericana de Panamá.  M. Systems Management with emphasis in Information Security. 2020 - (April 2022)<br>
-                
-                <i class="material-icons">check_circle</i></span>Florida State University.  BSc Computer Science. 2017 - 2019 <span style="font-weight: bold;">GPA 3.72/4</span><br>
-                <i class="material-icons">check_circle</i></span>Universidad Simón Bolívar. Bsc. Computer Engineering. 2012 - 2017 (transferred)
-            </p>
-        </div>
-    
-        <div class="col offset-s2 s10  offset-l2 l5 box">
-            <h2>Other Information</h1>
-            <p class="flow-text">
-                <span><i class="material-icons">check_circle</i></span>PL-900 Power Platform Fundamentals Course. Jun 2021<br>
-                <i class="material-icons">check_circle</i></span> Mooc course. MiríadaX. Fundación Telefónica. Aprende WordPress
-
-            </p>
-        </div>
-
-
-
-    </div>
-
-</div>
-<div>
-    
-<div class="row hide-on-med-and-up">
-    <div class="col s12 white">
-        <h1 class="center" id="title">Diego Pedroza</h1>
-        <h2 class="center" id="subtitle">Software Developer</h2>
-    </div>
-</div>
-            
-</div>
-</body>--> 
-</html> 
+    <footer>
+        <p>&copy; </p>
+        <p>ITIS Software, Universidad de Málaga, España</p>
+        <p>Acknowledgement: This research is partially funded by the Universidad de Málaga (UMA); under grant PID2024-158752OB-I00 (AIM-ZERO) funded by MICIU/AEI/10.13039/501100011033; under grant number PRE2021-100645 by MCIN/AEI/10.13039/501100011033 and by the FSE+; The authors thank the Supercomputing and Bioinformatics center at the UMA for their computer resources and assistance.
+</p>
+    </footer>
+</body>
+</html>
