@@ -1,325 +1,105 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Improving active micromobility</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --color-primary: #2E8B9E;
-            --color-secondary: #E84E4E;
-            --color-accent: #7CB342;
-            --color-dark: #1a1a1a;
-            --color-light: #f5f5f5;
-            --color-text: #333333;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--color-text);
-            background: linear-gradient(135deg, #f5f5f5 0%, #e8f4f8 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        header {
-            background: linear-gradient(135deg, var(--color-primary) 0%, #1e5a68 100%);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            border-radius: 10px;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        header p {
-            font-size: 1.1em;
-            opacity: 0.95;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .project-header {
-            background: linear-gradient(135deg, var(--color-primary) 0%, #1e5a68 100%);
-            color: white;
-            padding: 20px;
-            border-bottom: 4px solid var(--color-secondary);
-        }
-
-        .project-header h2 {
-            font-size: 1.5em;
-            margin-bottom: 5px;
-        }
-
-        .project-body {
-            padding: 25px;
-        }
-
-        .field {
-            margin-bottom: 20px;
-        }
-
-        .field-label {
-            font-weight: 600;
-            color: var(--color-primary);
-            font-size: 0.9em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-        }
-
-        .field-value {
-            color: var(--color-text);
-            font-size: 1em;
-            line-height: 1.5;
-            padding-left: 10px;
-            border-left: 3px solid var(--color-accent);
-        }
-
-        .field-value a {
-            color: var(--color-primary);
-            text-decoration: none;
-            font-weight: 500;
-            word-break: break-all;
-        }
-
-        .field-value a:hover {
-            text-decoration: underline;
-        }
-
-        .authors-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 10px;
-        }
-
-        .author-badge {
-            background: var(--color-light);
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            border-left: 3px solid var(--color-accent);
-        }
-
-        .qr-section {
-            background: #f9f9f9;
-            padding: 20px;
-            border-top: 2px solid var(--color-light);
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .qr-section p {
-            font-size: 0.85em;
-            color: #666;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        .doi-badge {
-            display: inline-block;
-            background: var(--color-secondary);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: 600;
-            font-size: 0.85em;
-            margin-top: 10px;
-        }
-
-        footer {
-            background: var(--color-dark);
-            color: white;
-            text-align: center;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 40px;
-            font-size: 0.9em;
-        }
-
-        .logo-section {
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        .logo-section p {
-            color: var(--color-primary);
-            font-weight: 600;
-            margin-top: 10px;
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.8em;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .project-header h2 {
-                font-size: 1.2em;
-            }
-
-            .authors-list {
-                flex-direction: column;
-                gap: 8px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Research publications by Diego Daniel Pedroza-Perez on micromobility, evolutionary multi-objective optimization and urban transportation." />
+  <meta name="theme-color" content="#0b1730" />
+  <title>Research Publications | Diego Daniel Pedroza-Perez</title>
+  <!-- CSS integrado: no se necesita ningún archivo externo -->
+  <style>
+    :root{--navy:#0b1730;--navy-light:#14294d;--ink:#17243b;--muted:#66758a;--blue:#2470e6;--light-blue:#eaf2ff;--border:#e1e8f1;--page:#f7f9fc;--white:#fff;--max:1040px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--page);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}a{color:inherit}a:focus-visible{outline:3px solid #6eaeff;outline-offset:4px}.container{width:min(var(--max),calc(100% - 48px));margin:0 auto}.skip-link{position:absolute;top:-80px;left:20px;z-index:30;padding:12px 20px;background:#fff;color:#000}.skip-link:focus{top:20px}.hero{position:relative;overflow:hidden;background:linear-gradient(128deg,#0b1730 15%,#163663 100%);color:#fff;padding:95px 0 82px}.hero .container{position:relative;z-index:1}.eyebrow,.section-kicker{font-weight:750;font-size:.75rem;letter-spacing:.19em}.eyebrow{display:flex;align-items:center;gap:12px;color:#91c4ff}.eyebrow-line{width:30px;height:2px;background:#4eacff}.hero h1{max-width:840px;font-size:clamp(2.25rem,5.6vw,4.4rem);line-height:1.13;letter-spacing:-.045em;margin:23px 0}.hero h1 span{color:#91c4ff}.hero-description{max-width:620px;color:#c3d4e8;font-size:1.1rem;margin:0 0 27px}.hero-meta{display:flex;flex-wrap:wrap;align-items:center;gap:14px;color:#d7e7f9;font-size:.92rem}.separator{width:5px;height:5px;border-radius:50%;background:#6f9bcc}.hero-link{display:inline-flex;align-items:center;gap:16px;border:1px solid #6388b5;border-radius:9px;text-decoration:none;font-weight:650;padding:11px 17px;margin-top:34px;transition:background .2s}.hero-link:hover{background:#244b77}.hero-shape{pointer-events:none;position:absolute;border:1px solid rgba(120,170,230,.13);border-radius:50%}.hero-shape-one{height:600px;width:600px;right:-190px;top:-210px}.hero-shape-two{height:420px;width:420px;right:-50px;top:-120px}.main-content{padding-top:72px;padding-bottom:90px}.section-top{display:flex;justify-content:space-between;gap:24px;align-items:center}.section-kicker{color:#2670cd;margin:0 0 8px}.section-top h2{font-size:clamp(1.8rem,3.8vw,2.65rem);letter-spacing:-.035em;line-height:1.2;margin:0 0 10px}.section-description{color:var(--muted);margin:0}.publication-count{min-width:135px;text-align:right;display:flex;flex-direction:column;line-height:1.1}.publication-count strong{font-size:3.4rem;letter-spacing:-.08em;color:#a4bad8}.publication-count span{font-weight:750;letter-spacing:.1em;color:#718198;font-size:.7rem}.year-heading{display:flex;align-items:center;gap:16px;margin:55px 0 19px}.year-heading>span:first-child{color:var(--navy);font-weight:850;font-size:1.2rem}.year-heading .rule{height:1px;flex:1;background:#d9e3ef}.year-heading>span:last-child{color:#75849a;font-size:.8rem;white-space:nowrap}.publication{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:34px 40px 33px;margin-bottom:20px;box-shadow:0 9px 28px rgba(18,43,74,.035)}.publication-heading{display:flex;align-items:start;justify-content:space-between;gap:14px}.metadata{display:flex;flex-wrap:wrap;align-items:center;gap:12px}.tag{background:var(--light-blue);border-radius:5px;color:#195cbd;font-size:.68rem;letter-spacing:.065em;font-weight:800;padding:5px 9px}.venue{color:#64758a;font-size:.8rem}.number{color:#9bacc1;font-size:.77rem;white-space:nowrap;font-weight:650}.publication h3{font-size:clamp(1.33rem,2.8vw,1.77rem);letter-spacing:-.024em;line-height:1.36;margin:18px 0 25px;max-width:850px}.details{margin:0;display:grid;gap:0}.details>div{display:grid;grid-template-columns:105px minmax(0,1fr);gap:16px;border-top:1px solid #eef2f7;padding:16px 0}.details dt{color:#7e8da1;text-transform:uppercase;letter-spacing:.1em;font-weight:800;font-size:.72rem;padding-top:3px}.details dd{margin:0;min-width:0;color:#3d4c60;font-size:.92rem;overflow-wrap:anywhere}.details dd a{color:#1769d1;text-decoration:none;font-weight:650}.details dd a:hover{text-decoration:underline}.details dd p{margin:0 0 12px}.details dd p:last-child{margin-bottom:0}.article-link{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-size:.87rem;font-weight:750;color:#1769d1;margin-top:17px}.article-link:hover{text-decoration:underline}.site-footer{background:#101f36;color:#ebf1fa;padding:44px 0 33px}.footer-content{display:flex;justify-content:space-between;align-items:center;gap:20px}.footer-content strong{font-size:.95rem}.footer-content p{margin:4px 0 0;color:#a6b8d0;font-size:.85rem}.footer-content a{font-size:.85rem;color:#b8d7ff;text-decoration:none}.footer-note{border-top:1px solid #32415a;margin-top:26px;padding-top:20px;font-size:.76rem;color:#9fb0c5;line-height:1.7}@media(max-width:650px){.container{width:min(var(--max),calc(100% - 30px))}.hero{padding:70px 0 60px}.hero h1{margin-top:20px}.hero-meta{gap:7px 12px}.section-top{align-items:flex-start}.publication-count{display:none}.main-content{padding-top:50px;padding-bottom:62px}.year-heading{margin-top:39px}.publication{padding:25px 21px;border-radius:12px}.details>div{grid-template-columns:1fr;gap:5px;padding:13px 0}.details dt{padding-top:0}.publication h3{margin:18px 0 20px}.footer-content{align-items:start;flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Improving Active Mobility and Micromobility with AI and Bio-inspired Algorithms</h1>
-        <p>Diego Daniel Pedroza-Perez, Jamal Toutouh, Gabriel Luque</p>
-        <!-- <p>Proyectos de Investigación en Movilidad Sostenible</p> -->
-    </header>
-
+  <a class="skip-link" href="#publications">Skip to publications</a>
+  <header class="hero">
     <div class="container">
-        <div class="projects-grid">
-            <!-- Proyecto 1 -->
-            <div class="project-card">
-                <div class="project-header">
-                    <h2>Redesigning road infrastructure to integrate e-scooter micromobility as part of multimodal transportation</h2>
-                </div>
-                <div class="project-body">
-                    <div class="field">
-                        <div class="field-label">Title</div>
-                        <div class="field-value">
-                            Redesigning road infrastructure to integrate e-scooter micromobility as part of multimodal transportation
-                        </div>
-                    </div>
+      <div class="eyebrow"><span class="eyebrow-line"></span> RESEARCH PORTFOLIO</div>
+      <h1>Improving Active Mobility <span>and Micromobility</span> with Machine Learning and Bio-inspired Algorithms</h1>
+      <p class="hero-description">Research on intelligent urban mobility, e-scooter infrastructure and robust optimization of bike-sharing systems.</p>
+      <div class="hero-meta"><span>Diego Daniel Pedroza-Perez</span><span class="separator" aria-hidden="true"></span><span>University of Málaga · ITIS Software</span></div>
+      <a class="hero-link" href="#publications">Explore publications <span aria-hidden="true">↓</span></a>
+    </div>
+    <div class="hero-shape hero-shape-one" aria-hidden="true"></div>
+    <div class="hero-shape hero-shape-two" aria-hidden="true"></div>
+  </header>
 
-                    <div class="field">
-                        <div class="field-label">DOI</div>
-                        <div class="field-value">
-                            <a href="https://doi.org/10.1145/3638529.3654142" target="_blank">10.1145/3638529.3654142</a>
-                            <!-- <a href="https://doi.org/10.1145/3638529.3654142" target="_blank"><span class="doi-badge">DOI</span></a> -->
-                        </div>
-                    </div>
-
-                    
-                    <div class="field">
-                        <div class="field-label">Authors</div>
-                        <div class="authors-list">
-                            <span class="author-badge">Diego Daniel Pedroza-Perez</span>
-                            <span class="author-badge">Jamal Toutouh</span>
-                            <span class="author-badge">Gabriel Luque</span>
-                        </div>
-                    </div>
-
-                    <div class="field">
-                        <div class="field-label">Abstract</div>
-                        <div class="field-value">
-                            This paper proposes a multi-criteria approach to optimize urban infrastructure for e-scooters mobility. The problem considers redesigning road infrastructure to integrate e-scooters into a city's multimodal transportation system. This research aims to improve cycle lane coverage and connectivity for e-scooters while minimizing installation costs. Two parallel multi-objective evolutionary algorithms are devised to solve this problem in a real-world instance based on Málaga. The results showed that the algorithms effectively explored the Pareto front, offering diverse trade-off solutions. Key solutions are analyzed to evaluate the trade-offs between travel time improvement, cycle lane connectivity, multimodality, and installation costs. Visualization of proposed infrastructure changes illustrates significant reductions in travel time.
-                        </div>
-                    </div>
-
-                    <!-- <div class="qr-section">
-                        <p>Article access</p>
-                        <span class="doi-badge">Scan for the article</span>
-                    </div> -->
-                </div>
-            </div>
-
-            <!-- Proyecto 2 -->
-            <div class="project-card">
-                <div class="project-header">
-                    <h2>Optimizing Urban Infrastructure for E-Scooter Mobility</h2>
-                </div>
-                <div class="project-body">
-                    <div class="field">
-                        <div class="field-label">Title</div>
-                        <div class="field-value">
-                            Optimizing Urban Infrastructure for E-Scooter Mobility
-                        </div>
-                    </div>
-                     <div class="field">
-                        <div class="field-label">DOI</div>
-                        <div class="field-value">
-                            <a href="https://doi.org/10.1007/978-3-031-56852-7_22" target="_blank">10.1007/978-3-031-56852-7_22</a>
-                            <!-- <span class="doi-badge">DOI</span> -->
-                        </div>
-                    </div>
-                    <div class="field">
-                        <div class="field-label">Authors</div>
-                        <div class="authors-list">
-                            <span class="author-badge">Diego Daniel Pedroza-Perez</span>
-                            <span class="author-badge">Jamal Toutouh</span>
-                            <span class="author-badge">Gabriel Luque</span>
-                        </div>
-                    </div>
-                    <div class="field">
-                        <div class="field-label">Abstract</div>
-                        <div class="field-value">
-                            This paper addresses the optimization of urban infrastructure for e-scooter mobility through a multi-criteria approach. The proposed problem considers redesigning road infrastructure to integrate e-scooters into a city’s multimodal transportation system. The objectives involve improving cycle lane coverage for e-scooters while minimizing installation costs. A parallel multi-objective evolutionary algorithm is introduced to solve this problem, applied to a real-world instance based on Málaga city data. The results showcase the algorithm’s effectiveness in exploring the Pareto front, offering diverse trade-off solutions. Key solutions are analyzed, highlighting different zones with varying trade-offs between travel time improvement and installation costs. Visualization of proposed infrastructure changes illustrates significant reductions in travel time and enhanced multimodality. Computational efficiency analysis indicates successful parallelization, achieving substantial speedup and high efficiency with up to 32 processing elements.
-                        </div>
-                    </div>
-
-
-                    <!-- <div class="field">
-                        <div class="field-label">Objetivos</div>
-                        <div class="field-value">
-                            <ul style="margin-left: 15px; margin-top: 10px;">
-                                <li>Integrar patinetes eléctricos en infraestructura vial</li>
-                                <li>Optimizar sistemas de transporte multimodal</li>
-                                <li>Reducir emisiones urbanas</li>
-                                <li>Mejorar la calidad de vida en ciudades</li>
-                            </ul>
-                        </div>
-                    </div> -->
-                   
-                    <!-- <div class="qr-section">
-                        <p>Article access</p>
-                        <span class="doi-badge">Scan for the article</span>
-                    </div> -->
-                </div>
-            </div>
-        </div>
+  <main id="publications" class="container main-content">
+    <div class="section-top">
+      <div><p class="section-kicker">SCIENTIFIC OUTPUT</p><h2>Selected publications</h2><p class="section-description">Peer-reviewed research across optimization, micromobility and multimodal transportation.</p></div>
+      <div class="publication-count"><strong>05</strong><span>PUBLICATIONS</span></div>
     </div>
 
-    <footer>
-        <p>&copy; </p>
-        <p>ITIS Software, Universidad de Málaga, España</p>
-        <p>Acknowledgement: This research is partially funded by the Universidad de Málaga (UMA); under grant PID2024-158752OB-I00 (AIM-ZERO) funded by MICIU/AEI/10.13039/501100011033; under grant number PRE2021-100645 by MCIN/AEI/10.13039/501100011033 and by the FSE+; The authors thank the Supercomputing and Bioinformatics center at the UMA for their computer resources and assistance.
-</p>
-    </footer>
+    <div class="year-heading"><span>2026</span><span class="rule"></span><span>2 publications</span></div>
+
+    <article class="publication" id="joco-2026">
+      <div class="publication-heading"><div class="metadata"><span class="tag">JOURNAL ARTICLE</span><span class="venue">Journal of Combinatorial Optimization · 2026</span></div><span class="number">01 / 05</span></div>
+      <h3>Uncertainty-aware multi-objective optimization for rebalancing bike shared systems</h3>
+      <dl class="details">
+        <div><dt>Title</dt><dd>Uncertainty-aware multi-objective optimization for rebalancing bike shared systems</dd></div>
+        <div><dt>DOI</dt><dd><a href="https://doi.org/10.1007/s10878-026-01460-1" target="_blank" rel="noopener noreferrer">10.1007/s10878-026-01460-1 <span aria-hidden="true">↗</span></a></dd></div>
+        <div><dt>Authors</dt><dd>Diego Daniel Pedroza-Perez, Gabriel Luque, Sergio Nesmachnow, Jamal Toutouh</dd></div>
+        <div><dt>Abstract</dt><dd><p>Overnight rebalancing in dock-based bike-sharing systems requires routing a limited fleet of trucks before user activity begins. This article formulates static rebalancing problem under stochastic demand uncertainty as a bi-objective combinatorial optimization problem that selects truck routes and visited stations. The first objective minimizes total travel distance. The second objective minimizes scenario-weighted unmet demand under a finite set of demand scenarios derived from historical station-status data. A deterministic recourse evaluation simulates truck loads and station inventories along each route and computes unmet demand for visited and unvisited stations. The article applies two multi-objective evolutionary algorithms, NSGA-II and MOEA/D, using a permutation–partition encoding and relocate-based operators that implement a 1–0 relocate neighborhood between routes. A roulette-wheel-based relocation operator (BB2) biases move selection by the induced change in route distance. Experiments on the Barcelona Bicing network with 518 stations and on clustered subinstances show that NSGA-II attains higher hypervolume and larger non-dominated sets, whereas MOEA/D attains lower runtime; an ablation analysis shows that BB2 improves coverage and proximity indicators.</p></dd></div>
+      </dl>
+      <a class="article-link" href="https://doi.org/10.1007/s10878-026-01460-1" target="_blank" rel="noopener noreferrer">Read publication <span aria-hidden="true">↗</span></a>
+    </article>
+
+    <article class="publication" id="gecco-2026">
+      <div class="publication-heading"><div class="metadata"><span class="tag">CONFERENCE PAPER</span><span class="venue">GECCO '26 · 2026</span></div><span class="number">02 / 05</span></div>
+      <h3>Robust Multi-Objective Optimization for Bicycle Rebalancing in Shared Mobility Systems</h3>
+      <dl class="details">
+        <div><dt>Title</dt><dd>Robust Multi-Objective Optimization for Bicycle Rebalancing in Shared Mobility Systems</dd></div>
+        <div><dt>DOI</dt><dd><a href="https://doi.org/10.1145/3795095.3805158" target="_blank" rel="noopener noreferrer">10.1145/3795095.3805158 <span aria-hidden="true">↗</span></a></dd></div>
+        <div><dt>Authors</dt><dd>Diego Daniel Pedroza-Perez, Gabriel Luque, Sergio Nesmachnow, Jamal Toutouh</dd></div>
+        <div><dt>Abstract</dt><dd><p>Dock-based bike-sharing systems exhibit spatial imbalances between bicycle supply and user demand, often addressed through overnight truck-based rebalancing. This work studies static overnight rebalancing under demand uncertainty modeled as a tri-objective optimization problem. The objectives minimize total travel distance, expected unmet demand, and a robustness-oriented unmet demand measure over high-demand scenarios. Route plans are evaluated via a recourse simulation that enforces truck loads and station capacity constraints across multiple demand realizations. The robustness objective supports selecting plans that reduce peak-demand service degradation. Trade-off solutions are approximated with Non-dominated Sorting Genetic Algorithm II using a permutation-partition encoding and domain-specific relocation operators, including a biased best-improvement move for station relocation. Experiments on the real Barcelona Bicing system with 460 stations show well-distributed Pareto sets and substantial contributions to the reference non-dominated set. Greedy constructive baselines mainly yield extreme solutions and are often dominated.</p></dd></div>
+      </dl>
+      <a class="article-link" href="https://doi.org/10.1145/3795095.3805158" target="_blank" rel="noopener noreferrer">Read publication <span aria-hidden="true">↗</span></a>
+    </article>
+
+    <div class="year-heading"><span>2024</span><span class="rule"></span><span>2 publications</span></div>
+
+    <article class="publication" id="gecco-2024">
+      <div class="publication-heading"><div class="metadata"><span class="tag">CONFERENCE PAPER</span><span class="venue">GECCO '24 · 2024</span></div><span class="number">03 / 05</span></div>
+      <h3>Redesigning road infrastructure to integrate e-scooter micromobility as part of multimodal transportation</h3>
+      <dl class="details">
+        <div><dt>Title</dt><dd>Redesigning road infrastructure to integrate e-scooter micromobility as part of multimodal transportation</dd></div>
+        <div><dt>DOI</dt><dd><a href="https://doi.org/10.1145/3638529.3654142" target="_blank" rel="noopener noreferrer">10.1145/3638529.3654142 <span aria-hidden="true">↗</span></a></dd></div>
+        <div><dt>Authors</dt><dd>Diego Daniel Pedroza-Perez, Jamal Toutouh, Gabriel Luque</dd></div>
+        <div><dt>Abstract</dt><dd><p>This paper proposes a multi-criteria approach to optimize urban infrastructure for e-scooters mobility. The problem considers redesigning road infrastructure to integrate e-scooters into a city's multimodal transportation system. This research aims to improve cycle lane coverage and connectivity for e-scooters while minimizing installation costs. Two parallel multi-objective evolutionary algorithms are devised to solve this problem in a real-world instance based on Málaga. The results showed that the algorithms effectively explored the Pareto front, offering diverse trade-off solutions. Key solutions are analyzed to evaluate the trade-offs between travel time improvement, cycle lane connectivity, multimodality, and installation costs. Visualization of proposed infrastructure changes illustrates significant reductions in travel time.</p></dd></div>
+      </dl>
+      <a class="article-link" href="https://doi.org/10.1145/3638529.3654142" target="_blank" rel="noopener noreferrer">Read publication <span aria-hidden="true">↗</span></a>
+    </article>
+
+    <article class="publication" id="evo-2024">
+      <div class="publication-heading"><div class="metadata"><span class="tag">CONFERENCE PAPER</span><span class="venue">EvoApplications '24 · 2024</span></div><span class="number">04 / 05</span></div>
+      <h3>Optimizing Urban Infrastructure for E-Scooter Mobility</h3>
+      <dl class="details">
+        <div><dt>Title</dt><dd>Optimizing Urban Infrastructure for E-Scooter Mobility</dd></div>
+        <div><dt>DOI</dt><dd><a href="https://doi.org/10.1007/978-3-031-56852-7_22" target="_blank" rel="noopener noreferrer">10.1007/978-3-031-56852-7_22 <span aria-hidden="true">↗</span></a></dd></div>
+        <div><dt>Authors</dt><dd>Diego Daniel Pedroza-Perez, Jamal Toutouh, Gabriel Luque</dd></div>
+        <div><dt>Abstract</dt><dd><p>This paper addresses the optimization of urban infrastructure for e-scooter mobility through a multi-criteria approach. The proposed problem considers redesigning road infrastructure to integrate e-scooters into a city’s multimodal transportation system. The objectives involve improving cycle lane coverage for e-scooters while minimizing installation costs. A parallel multi-objective evolutionary algorithm is introduced to solve this problem, applied to a real-world instance based on Málaga city data. The results showcase the algorithm’s effectiveness in exploring the Pareto front, offering diverse trade-off solutions. Key solutions are analyzed, highlighting different zones with varying trade-offs between travel time improvement and installation costs. Visualization of proposed infrastructure changes illustrates significant reductions in travel time and enhanced multimodality. Computational efficiency analysis indicates successful parallelization, achieving substantial speedup and high efficiency with up to 32 processing elements.</p></dd></div>
+      </dl>
+      <a class="article-link" href="https://doi.org/10.1007/978-3-031-56852-7_22" target="_blank" rel="noopener noreferrer">Read publication <span aria-hidden="true">↗</span></a>
+    </article>
+
+    <div class="year-heading"><span>2023</span><span class="rule"></span><span>1 publication</span></div>
+
+    <article class="publication" id="ola-2023">
+      <div class="publication-heading"><div class="metadata"><span class="tag">CONFERENCE PAPER</span><span class="venue">OLA '23 · 2023</span></div><span class="number">05 / 05</span></div>
+      <h3>E-scooters Routes Potential: Open Data Analysis in Current Infrastructure. Malaga Case</h3>
+      <dl class="details">
+        <div><dt>Title</dt><dd>E-scooters Routes Potential: Open Data Analysis in Current Infrastructure. Malaga Case</dd></div>
+        <div><dt>DOI</dt><dd><a href="https://doi.org/10.1007/978-3-031-34020-8_29" target="_blank" rel="noopener noreferrer">10.1007/978-3-031-34020-8_29 <span aria-hidden="true">↗</span></a></dd></div>
+        <div><dt>Authors</dt><dd>Diego Daniel Pedroza-Perez, Jamal Toutouh, Gabriel Luque</dd></div>
+        <div><dt>Abstract</dt><dd><p>There is an increasing interest in alternative vehicle mobility, such as electric scooters (e-scooters). E-scooters are getting attention not only for their environmental impact but also because they are easy to ride on. However, could our current infrastructure support e-scooter trips? Could e-scooter offer a better way to move on our present streets and roads? Using current open data such as the census segments of Malaga city (Spain), the list of non-tertiary institutions, and a map of OpenStreetMap, this work explores the potential of e-scooter in a growing European city by simulating routes trips in Origin-Destination Matrix. The main results are 1) in the current streets, a person can reduce at least 40% of the time using an e-scooter to commute compared to walking; 2) the road infrastructure offered for e-scooters downtown is adequate, especially for routes of more than one kilomete; however this infrastructure needs to be improved in the outskirts of the city.</p></dd></div>
+      </dl>
+      <a class="article-link" href="https://doi.org/10.1007/978-3-031-34020-8_29" target="_blank" rel="noopener noreferrer">Read publication <span aria-hidden="true">↗</span></a>
+    </article>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-content"><div><strong>Diego Daniel Pedroza-Perez</strong><p>ITIS Software · Universidad de Málaga, Spain</p></div><a href="#publications">Back to publications ↑</a></div><div class="container footer-note">Research partially supported by Universidad de Málaga, project PID2024-158752OB-I00 (AIM-ZERO), grant PRE2021-100645 and FSE+. The authors acknowledge the Supercomputing and Bioinformatics Center at the University of Málaga for its computing resources and support.</div></footer>
 </body>
 </html>
